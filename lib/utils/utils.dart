@@ -5,7 +5,6 @@ import 'package:test_videoplayer/models/m3u8_model.dart';
 
 Future<List<M3U8model>> loadM3U8s(String video) async {
   List<M3U8model> m3u8s = [];
-  m3u8s.add(M3U8model(dataQuality: "Auto", dataURL: video));
   RegExp regExp = RegExp(
     r"#EXT-X-STREAM-INF:(?:.*,RESOLUTION=(\d+x\d+))?,?(.*)\r?\n(.*)",
     caseSensitive: false,

@@ -25,7 +25,8 @@ class _VideoPlayerDemoState extends State<VideoPlayerDemo> {
   Future<void> getM3U8s() async {
     files = await loadM3U8s(videoUrl);
     _controller = VideoPlayerController.network(
-      files.last.dataURL!, //Get Best Quality
+      files.last
+          .dataURL!, //Get Best Quality since by default it gets lower quality
       formatHint: VideoFormat.hls,
       videoPlayerOptions: VideoPlayerOptions(mixWithOthers: true),
     )
